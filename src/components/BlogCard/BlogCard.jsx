@@ -65,7 +65,7 @@ import "./blogCard.css";
 export default function BlogCard({
   containerClass = "flex flex-col w-74 p-4 bg-linear-to-bl from-black to-fuchsia-700 rounded-xl border-1 shadow-lg shadow-black",
   categories,
-  categoryClass = "mb-2 text-sm font-figtree font-bold bg-white w-fit px-2 py-[2px] rounded tracking-tight",
+  categoryClass = "text-black mb-2 text-sm font-figtree font-bold bg-white w-fit px-2 py-[2px] rounded tracking-tight",
   image,
   imageContainerClass = "h-38 rounded-t-xl mb-5 overflow-hidden shadow-lg border-white",
   imagePos = `0 25%`,
