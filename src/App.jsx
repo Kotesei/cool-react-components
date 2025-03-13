@@ -11,6 +11,7 @@ function App() {
 
   return (
     <div className="flex flex-col items-center gap-2">
+      <Coolponents.SideBar />
       <Coolponents.QRCode
         {...args.qrCode}
         {...(showGeneration ? { generate: true } : {})}
