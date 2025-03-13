@@ -5,7 +5,7 @@ function DropDownSVG({ rotation }) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
       fill="currentColor"
-      className={`size-5 ${rotation ? `rotate-${rotation}` : ""}`}
+      className={`size-5 ${rotation ? rotation : ""}`}
     >
       <path
         fillRule="evenodd"
@@ -34,7 +34,7 @@ export default function SideBar() {
           {openDropdown !== 1 ? (
             <DropDownSVG />
           ) : (
-            <DropDownSVG rotation="180" />
+            <DropDownSVG rotation="rotate-180" />
           )}
         </label>
         <ul
@@ -57,7 +57,7 @@ export default function SideBar() {
           {openDropdown !== 2 ? (
             <DropDownSVG />
           ) : (
-            <DropDownSVG rotation="180" />
+            <DropDownSVG rotation="rotate-180" />
           )}
         </label>
         <ul

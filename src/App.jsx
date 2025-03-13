@@ -8,10 +8,12 @@ function App() {
   function handleGenerateCode() {
     setShowGeneration(true);
   }
-
+  // Sidebar goal: ul elements trigger dropdown menu
+  // Test with buttons and anchor elements
   return (
     <div className="flex flex-col items-center gap-2">
       <Coolponents.SideBar />
+
       <Coolponents.QRCode
         {...args.qrCode}
         {...(showGeneration ? { generate: true } : {})}
