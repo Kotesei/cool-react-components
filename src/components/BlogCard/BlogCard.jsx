@@ -1,72 +1,11 @@
 import "./blogCard.css";
 
-// Example Use Case with Random Data (If using map)
-// const cardsArray = [
-//   {
-//     categories: ["Tracking", "iPhone", "Something", "Test"],
-//     title: "Dopamine Levels!",
-//     description:
-//       "Here we see poor old man who won't stop scrolling... send help man.",
-//     imageSrc: img,
-//     imagePos: `0 23%`,
-//     date: "03/11/25",
-//     author: "Kotesei",
-//     authorImage: img,
-//   },
-// ];
-
-//////////////////////////////////////
-////////Inside App/////////////
-////////////////////////////
-// <BlogCard
-//   date="03/11/25"
-//   title="Something Title.."
-//   author="Kotesei"
-// ></BlogCard>
-//
-//
-/////////////// OR //////////////
-//
-//
-// {cardsArray.map(
-//   (
-//     {
-//       categories,
-//       title,
-//       description,
-//       imageSrc,
-//       imagePos,
-//       date,
-//       author,
-//       authorImage,
-//     },
-//     i
-//   ) => {
-//     return (
-//       <BlogCard
-//         image={imageSrc}
-//         key={`${categories}${i}`}
-//         categories={categories}
-//         title={title}
-//         imagePos={imagePos}
-//         date={date}
-//         author={author}
-//         authorImage={authorImage}
-//       >
-//         {description}
-//       </BlogCard>
-//     );
-//   }
-// )}
-//////////////////////////////////////
-////////////////////////////////
-////////////////////////////
-
 export default function BlogCard({
-  containerClass = "flex flex-col w-74 p-4 bg-linear-to-bl from-black to-fuchsia-700 rounded-xl border-1 shadow-lg shadow-black",
+  containerClass = "flex flex-col w-74 p-4 bg-linear-to-bl from-black to-fuchsia-700 rounded-xl border-1 border-black shadow-lg shadow-black",
   categories,
   categoryClass = "text-black mb-2 text-sm font-figtree font-bold bg-white w-fit px-2 py-[2px] rounded tracking-tight",
   image,
+  imagealt,
   imageContainerClass = "h-38 rounded-t-xl mb-5 overflow-hidden shadow-lg border-white",
   imagePos = `0 25%`,
   title,
@@ -86,6 +25,7 @@ export default function BlogCard({
             style={{ objectPosition: imagePos }}
             className={`object-cover w-full h-39`}
             src={image}
+            alt={imagealt}
           />
         )}
       </div>
@@ -105,6 +45,7 @@ export default function BlogCard({
         <img
           className="w-7 h-7 rounded-full bg-red-500 border-1"
           src={authorImage}
+          alt={`by ${author}`}
         />
         <p className="text-white text-xs font-medium">{author}</p>
       </div>
