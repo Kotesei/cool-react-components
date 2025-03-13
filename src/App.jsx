@@ -1,19 +1,25 @@
 import Coolponents from "./index.js";
+import { useState } from "react";
+import * as args from "./assets/sampleArgs.js";
+
 function App() {
+  const [showGeneration, setShowGeneration] = useState(false);
+
+  function handleGenerateCode() {
+    setShowGeneration(true);
+  }
+
   return (
-    <>
-      <Coolponents.BlogCard
-        title="This is a Blog Card!"
-        authorImage="./authorimg.jpg"
-        author="Kotesei"
-        categories={["Sample", "Tutorial"]}
-        date="03/11/25"
-        image="https://images.unsplash.com/photo-1741526798351-50eeb46b2a06?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        imagePos="0 55%"
-      >
+    <div className="flex flex-col items-center gap-2">
+      <Coolponents.QRCode
+        {...args.qrCode}
+        {...(showGeneration ? { generate: true } : {})}
+      />
+      <button onClick={handleGenerateCode}>Generate QR Code!</button>
+      <Coolponents.BlogCard {...args.blogCard}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </Coolponents.BlogCard>
-    </>
+    </div>
   );
 }
 
